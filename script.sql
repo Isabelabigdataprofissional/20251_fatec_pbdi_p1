@@ -143,4 +143,32 @@ $$
 -- 5. Limpeza de valores NULL
 --escreva a sua solução aqui
 
+DO $$ 
+DECLARE 
+    cur_delete REFCURSOR;
+    tupla RECORD;
+
+BEGIN
+OPEN cur_delete SCROOL FOR 
+SELECT * FROM p1_tabela;
+LOOP 
+ FETCH cur_delete INTO tupla;
+ EXIT WHEN NOT FOUND ;
+
+ IF tupla.salary IS NULL THEN 
+  RAISE NOTICE 'SERÃO APAGADOS  ---- %', tupla.salary
+  DELETE FROM p1_tabela WHERE CURRENT OF cur_delete;
+END IF;
+END LOOP;
+
+LOOP 
+FETCH BACKWARD DROM cur_delete INTO tupla;
+ EXIT WHEN NOT FOUND ;
+
+RAISE NOTICE 'APAGADO %', tupla;
+END LOOP;
+
+CLOSE cur_delete;
+END;
+$$ 
 -- ----------------------------------------------------------------
