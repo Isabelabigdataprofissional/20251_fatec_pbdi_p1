@@ -8,8 +8,8 @@
 
 | Nome completo | RA |
 |:--------------|:---|
+|Amanda Poit Albuquerque Resende|2041382411019|
 |                |     |
+|Giovanna Nunes Simões de Almeida|2041382411029|
 |                |     |
-|                |     |
-|                |     |
-|                |     |
+|ISABELA REIKDAL BOMBONATTO LUGO|041382411011|
