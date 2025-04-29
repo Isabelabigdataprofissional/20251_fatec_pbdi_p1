@@ -137,7 +137,25 @@ $$
 -- ----------------------------------------------------------------
 -- 4 Salário versus estudos
 --escreva a sua solução aqui
-
+DO $$
+DECLARE
+cur_aluno_salario CURSOR FOR SELECT salary, prep_exam FROM p1_tabela;
+qtd INT := 0;
+tupla RECORD;
+BEGIN
+OPEN cur_aluno_salario;
+LOOP
+FETCH cur_aluno_salario INTO tupla;
+INTO tupla;
+EXIT WHEN NOT FOUND
+LOOP
+IF  salary = 5 AND prep_exam = 2 THEN
+    qtd = qtd + 1,
+	RAISE NOTICE '%', qtd;
+EXIT WHEN NOT FOUND
+CLOSE cur_aluno_salario;
+END;
+$$
 
 -- ----------------------------------------------------------------
 -- 5. Limpeza de valores NULL
